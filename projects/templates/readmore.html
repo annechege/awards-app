@@ -1,0 +1,54 @@
+<div class="class" style="font-family: 'Jost', sans-serif;">
+    {% extends 'base.html'%}
+    {% load ratings %}
+    {%block content%}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm">
+                <div class="view view-cascade overlay">
+                    <img class="img-fluid" src="{{projects.projectscreenshot.url}}" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm">
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>{{projects.title}}</strong></h4>
+                    <!-- Subtitle -->
+                    <h6 class="font-weight-bold indigo-text py-2">Description</h6>
+                    <!-- Text -->
+                    <p class="card-text">{{projects.description}}
+                    </p>
+                    <a href="{{projects.projecturl}}">
+                        <button class="btn btn-primary">Check out</button>
+                    </a>
+                    <h5 style="padding-left: 120%;" class="text-secondary">By: {{projects.user}}</h5>
+                </div>
+            </div>
+        </div>
+        <iv class="ratings">
+            <h3 class="pt-3 h2">Rate</h3>
+            <div class="row">
+                <div class="col-sm">
+                    <h4>Usability</h4>
+                    {% ratings projects %}
+                    <h4>Usability</h4>
+                </div>
+                <div class="col-sm">
+                    <h4>Design</h4>
+                    {% ratings projects %}
+                </div>
+                <div class="col-sm">
+                    <h4>Content</h4>
+                    {% ratings projects %}
+                </div>
+            </div>
+            <a href="{% url "rate" projects.id %}" class="h1">Review</a>
+    </div>
+    <div>
+        {%endblock%}
+    </div>
