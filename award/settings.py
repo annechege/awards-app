@@ -70,7 +70,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'project',
+    'projects',
     'award',
     'cloudinary',
     'star_ratings',
@@ -122,9 +122,9 @@ WSGI_APPLICATION = 'award.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awward',
+        'NAME': 'award',
         'USER':'moringa',
-        'PASSWORD':'Access'
+        'PASSWORD':'access'
     }
 }
 
@@ -180,6 +180,7 @@ STATICFILES_DIRS = (
 )
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cloudinary.config( 
   cloud_name = "dvt3d0x7d", 
