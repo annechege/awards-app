@@ -1,3 +1,5 @@
+# linking all the end points
+
 from django.urls import include,path,re_path
 from . import views
 from django.conf import settings
