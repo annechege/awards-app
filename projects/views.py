@@ -1,3 +1,8 @@
+from django import urls
+
+
+# views we call models to communicate with templates via urls in the app
+
 from __future__ import unicode_literals
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render,redirect
