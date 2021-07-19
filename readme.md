@@ -17,7 +17,7 @@ Download any text editor of your choice, either Sublime, Visual-Studio-Code or A
   - ```sudo apt-get install python3.8```.
   - ```python --version``` to confirm that python has been installed.
 ##### Git clone the project on your current directory by:
-  - ```git clone https://github.com/annechege/instagram-app.git```.
+  - ```git clone https://github.com/annechege/awards-app.git```.
 ##### Install virtual environment using python:
   - ```python3.8 -m venv virtual```, check your project to confirm you have a folder called virtual,
   - then activate it by running ```source virtual/bin/activate```
@@ -41,6 +41,7 @@ As a user, I would like to like a picture and leave a comment on it.
 
 
 ### Behavior Driven Development
+
 ##### Given that a user sign-up with the correct details, and use those details to login successfully, then they should be able to access the application and it's features.
 ##### Given that the user has uploaded a photo, then, the application should display the photo uploaded.
 ##### Given that a user has logged in, created a profile and posted a picture, then they  should be able to view their profile and all the photos they've posted.
@@ -56,4 +57,4 @@ HTML
 
 
 ### Licence
-[MIT](LICENSE)
+[MIT](LICENSE) 
