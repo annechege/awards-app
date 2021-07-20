@@ -13,6 +13,7 @@ award-app is a platform where users  can view initial project
 
 ### Installation Process
 Download any text editor of your choice, either Sublime, Visual-Studio-Code or Atom.
+A website application that allows the user to log in,view some services offered and book road travel .
 ##### Install your preferred version of python
   - ```sudo apt-get install python3.8```.
   - ```python --version``` to confirm that python has been installed.
