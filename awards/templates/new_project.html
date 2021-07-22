@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div style="padding-top:80px; margin-bottom:30px ;" >
+  <div class="row ">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <img class="img-fluid" src="https://www.sandiegoala.org/wp-content/uploads/2015/06/Spirit-of-SD-Awards.jpg" alt="trophy image">
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-transparent">
+        <div class="card-header">
+          <h2 style="font-family: 'Lobster Two', cursive;"><b><u>Post a Project</u></b></h2>
+        </div>
+        <div class="card-body">
+          <form action="{% url 'newproject' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-info" style="margin-left: 10%;">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+
+  </div>
+
+</div>
+
+{% endblock content %}

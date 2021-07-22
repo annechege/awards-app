@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<div style=padding-top:150px;></div>
+<div class="container">
+    <div class="row jumbotron text-center" style="background-color: black; margin-bottom: 150px;">
+        {% if project %}
+        <h2 style="color:white; font-family: 'Lobster Two', cursive;"> {{project|length}} projects found with keyword {{message}}</h2>
+        {% else %}
+        <h2 style="color:white; font-family: 'Lobster Two', cursive;"> No project found with the keyword {{message}} </h2>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if project %}
+        {% for my_project in project %}
+        <div class="col-md-6">
+            <h1> {{my_project.title}} </h1>
+            <a href="/singleproject/{{my_project.id}}">
+                <img width="500px" src=" {{my_project.image.url}} " alt="project image"></a>
+            <a href=" {{my_project.link}} ">{{my_project.link}}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

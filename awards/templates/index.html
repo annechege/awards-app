@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{%block content%}
+{{ block.super}}
+
+<div>
+
+    <div class="container-fluid"
+        style="background-image: url('https://images.unsplash.com/photo-1519458246479-6acae7536988?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80');  background-repeat: no-repeat; background-size: cover; height: 100vh;  background-position: center; text-align:center; overflow-x:hidden;">
+
+
+        <h1 style="  font-size:50px; margin-top:60px; color:white; font-family: 'Redressed', cursive;">The Gallery</h1>
+        <p style="color: beige;font-family: 'Redressed', cursive;font-size: 20px;"><b> By: </b>Ariso Okanga</p>
+        
+        <a href="https://ariso-gallery.herokuapp.com/" class="btn btn-info btn-rounded" target="_blank">View and Rate site</a>
+    </div>
+
+
+    <br><br>
+    <h2 class="text-center" style="font-family: 'Yeseva One', cursive; margin-top: 20px;">View and Rate Websites</h2>
+    <div class="container-fluid">
+    <div class="row">
+        {% for project in all_projects %}
+        <div class="card col-md-3" style="margin-bottom: 30px; margin-left: 70px; margin-right:0px;">
+            <h3 style= "font-family: 'Redressed', cursive;" class="card-title pictitle" > {{project.title}} </h3>
+            <a href="/singleproject/{{project.id}}">
+            <img class="card-img-top img-fluid" style="width:300px;height: 200px;" src=" {{project.image.url}}" alt="{{post.name}}"></a>
+            <div style= "width: 300px; height: 150px;" class="card-body text-center">
+                <h4  class="card-title" style="font-family: 'Redressed', cursive;"> {{project.description}}</h4>
+                <a href="{{project.link}}" target="_blank">view website</a>
+                <p class="card-text" style="align-content: center;"><b>Posted by:</b> {{project.user}} </p>
+                <p class="card-meta float-right">{{project.date_created}}</p>
+                <a style="text-align: center;" href="{%url 'comment' project.id%}" class="btn btn-primary">Review</a>
+                <a style="text-align: center;" href="{%url 'rates' project.id%}" class="btn btn-primary">Rate</a>
+
+            </div>
+        </div>
+
+        {% empty %}
+
+        <h2>No projects at the moment</h2>
+        {% endfor %}
+    </div>
+
+
+{%endblock%}
